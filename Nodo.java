@@ -6,20 +6,19 @@ package ProyectoG5;
  * @author paoca
  */
 public class Nodo {
-    private Usuario usuario;
+    private Usuario elemento;
     private Nodo siguiente;
     
     public Nodo (){
-        this.usuario = usuario;
         this.siguiente = null;
     }
 
-    public Usuario getUsuario() {
-        return usuario;
+    public Usuario getElemento() {
+        return elemento;
     }
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
+    public void setElemento(Usuario elemento) {
+        this.elemento = elemento;
     }
 
     public Nodo getSiguiente() {
