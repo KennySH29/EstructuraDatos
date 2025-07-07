@@ -8,15 +8,16 @@ import javax.swing.JOptionPane;
  */
 public class Usuario {
     private String nombreCompleto;
-    private String nickname;
-    private String contrasena;
-    private boolean estado; // true = Activo, false = Inactivo
-
-    public Usuario(String nombreCompleto, String nickname, String contrasena, boolean estado) {
-        this.nombreCompleto = nombreCompleto;
-        this.nickname = nickname;
-        this.contrasena = contrasena;
-        this.estado = estado;
+    private String password;
+    private String nickName;
+    private boolean estado;
+    
+    
+    public Usuario(){
+        this.nombreCompleto = "";
+        this.password= "";
+        this.nickName = "";
+        this.estado = false;
     }
 
     public String getNombreCompleto() {
@@ -27,20 +28,20 @@ public class Usuario {
         this.nombreCompleto = nombreCompleto;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getPassword() {
+        return password;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     public boolean isEstado() {
@@ -50,23 +51,8 @@ public class Usuario {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
-    
-    // Método para inactivar un usuario
-    public static void inactivarUsuario() {
-        JOptionPane.showMessageDialog(null, "Funcionalidad para inactivar usuario aún no implementada", "Inactivar usuario", JOptionPane.INFORMATION_MESSAGE);
-    }
-    
-    // Método para agregar un usuario
-    public static Usuario agregarUsuario() {
-        String nombreCompleto = JOptionPane.showInputDialog("Ingrese el nombre completo:");
-        String nickname = JOptionPane.showInputDialog("Ingrese el nickname:");
-        String contrasena = JOptionPane.showInputDialog("Ingrese la contraseña:");
-        String estadoStr = JOptionPane.showInputDialog("Estado (1=Activo, 0=Inactivo):");
-        boolean estado = Integer.parseInt(estadoStr.trim()) == 1;
 
-        Usuario usuario = new Usuario(nombreCompleto, nickname, contrasena, estado);
-
-        JOptionPane.showMessageDialog(null, "Usuario agregado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
-        return usuario;
-    }
+    
+    
 }
+
