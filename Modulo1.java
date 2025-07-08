@@ -1,17 +1,18 @@
 package ProyectoG5;
 import javax.swing.JOptionPane;
+
 public class Modulo1 {
-  private NodoLES inicio;
+  private Nodo inicio;
 
 public Modulo1(){
     this.inicio = null;
 }  
 
-    public NodoLES getInicio() {
+    public Nodo getInicio() {
         return inicio;
     }
 
-    public void setInicio(NodoLES inicio) {
+    public void setInicio(Nodo inicio) {
         this.inicio = inicio;
     }
     public boolean esVacia(){
@@ -30,7 +31,7 @@ public Modulo1(){
         e.setPassword(JOptionPane.showInputDialog(null, "Ingrese la contraseña: "));
         e.setEstado(true);
         
-        NodoLES nuevo = new NodoLES();
+        Nodo nuevo = new Nodo();
         nuevo.setElemento(e);
         
         nuevo.setSiguiente(inicio);
@@ -41,7 +42,7 @@ public Modulo1(){
     public void consultarUsuarios(){
         //SE MUESTRA LA INFOEMACION DE LOS USUARIOS CON LAS BUSQUEDA DEL NICKNAME ESPECIFICO
         if(!esVacia()){
-            NodoLES aux = inicio;
+            Nodo aux = inicio;
             boolean encontrado = false;
             String nomb=JOptionPane.showInputDialog(null,
                  "Digite el nickname del usuario que desea consultar:");
@@ -71,7 +72,7 @@ public Modulo1(){
                //SE INACTIVAN LOS USUARIOS CON LAS BUSQUEDA DEL NICKNAME
             if(!esVacia()){
                 String nick = JOptionPane.showInputDialog(null, "Ingrese el nickname del usuario que desea inactivar: ");
-                NodoLES aux = inicio;
+                Nodo aux = inicio;
                 boolean encontrado = false;
                 while (aux!=null){
                     if(aux.getElemento().getNickName().equalsIgnoreCase(nick)){
