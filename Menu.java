@@ -43,7 +43,7 @@ public class Menu {
     
     public static void mostrarMenuGestionUsuarios() {
         boolean salir = false;
-        Usuario usuario = null; // Inicio con usuario vacío
+       Modulo1 modulo1 = new Modulo1();
 
         while (!salir) {
             String menu = "=== MENÚ PRINCIPAL ===\n" +
@@ -57,20 +57,13 @@ public class Menu {
 
             switch (opcion) {
                 case 1:
-                    usuario = Usuario.agregarUsuario();
+                    modulo1.agregarUsuario();
                     break;
                 case 2:
-                    if (usuario != null) {
-                        String estadoStr = usuario.isEstado() ? "Activo" : "Inactivo";
-                        JOptionPane.showMessageDialog(null, "Nombre Completo: " + usuario.getNombreCompleto() + "\n" +
-                        "Nickname: " + usuario.getNickname() + "\n" +
-                        "Estado: " + estadoStr, "Detalles del Usuario", JOptionPane.INFORMATION_MESSAGE);
-                    } else {
-                        JOptionPane.showMessageDialog(null, "No hay un usuario registrado.", "Error", JOptionPane.ERROR_MESSAGE);
-                    }
+                   modulo1.consultarUsuario();
                     break;
                 case 3:
-                    Usuario.inactivarUsuario();
+                    modulo1.inactivarUsuario();
                     break;
                 case 4:
                     salir = true;
